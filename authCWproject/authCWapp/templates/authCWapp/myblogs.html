@@ -1,0 +1,25 @@
+<!--EXTENSION FROM INDEX-->
+
+{% extends 'authCWapp/index.html' %}
+
+<!--==========HEADER===========-->
+{% block header %}
+My Blogs
+{% endblock header %}
+
+
+<!--============FOR LOOP ITERATING THRU SET===========-->
+{% block content %}
+{% if blog_list %}
+
+{% for eachItem in blog_list %}
+<h2>{{ eachItem.blog_title }}</h2>
+<p>{{ eachItem.blog_entry }}</p>
+
+{% endfor %}
+
+{% else %}
+<p>No Blogs Available.</p>
+{% endif %}
+
+{% endblock content %}
